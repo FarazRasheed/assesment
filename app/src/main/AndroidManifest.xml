@@ -35,6 +35,12 @@
             android:launchMode="singleTop"
             android:parentActivityName=".ui.main.home.HomeActivity" />
 
+        <activity
+            android:name=".ui.main.profile.ProfileEditActivity"
+            android:label="Edit Profile"
+            android:launchMode="singleTop"
+            android:parentActivityName=".ui.main.home.HomeActivity" />
+
     </application>
 
 </manifest>
