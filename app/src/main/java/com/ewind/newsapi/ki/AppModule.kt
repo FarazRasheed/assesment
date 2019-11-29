@@ -5,7 +5,7 @@ import com.ewind.newsapi.data.local.database.DatabaseClient
 import com.ewind.newsapi.data.remote.apis.NewsApi
 import com.ewind.newsapi.util.network.SupportInterceptor
 import com.ewind.newsapi.util.network.createNetworkClient
-import org.koin.android.ext.koin.androidContext
+import org.koin.android.ext.koin.androidApplication
 import org.koin.core.module.Module
 import org.koin.dsl.module
 import retrofit2.Retrofit
@@ -18,7 +18,7 @@ val networkModule: Module = module {
 }
 
 val dataBaseModule: Module = module {
-    single { DatabaseClient(androidContext()) }
+    single { DatabaseClient(androidApplication()) }
 }
 
 val retrofit: Retrofit =

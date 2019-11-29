@@ -7,7 +7,7 @@ import androidx.room.Query
 import com.ewind.newsapi.data.local.model.UserDB
 
 @Dao
-interface AuthorDao {
+interface UserDao {
 
     @Query("SELECT * FROM userdb")
     abstract fun getAll(): List<UserDB>

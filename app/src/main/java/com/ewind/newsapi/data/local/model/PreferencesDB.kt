@@ -5,10 +5,10 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 
 @Entity
-data class UserDB(
-    @ColumnInfo(name = "name")
-    var name: String? = null
+data class PreferencesDB(
+    @ColumnInfo(name = "keyword")
+    var keyword: String? = null
 ) {
-    @PrimaryKey(autoGenerate = false)
-    var id: Int = 1
+    @PrimaryKey(autoGenerate = true)
+    var id: Int = 0
 }

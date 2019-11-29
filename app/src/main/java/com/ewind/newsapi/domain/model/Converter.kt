@@ -1,5 +1,6 @@
 package com.ewind.newsapi.domain.model
 
+import com.ewind.newsapi.data.local.model.PreferencesDB
 import com.ewind.newsapi.data.local.model.UserDB
 import com.ewind.newsapi.data.remote.model.Articles
 import com.ewind.newsapi.data.remote.model.Response
@@ -17,10 +18,16 @@ fun Source.toViewModel(): DSource = DSource(
     id, name
 )
 
+fun PreferencesDB.toViewModel(): Category = Category(keyword)
+
+fun Category.toDBModel(): PreferencesDB = PreferencesDB(
+    key
+)
+
 fun UserDB.toViewModel(): DUser = DUser(
-    name, email
+    name
 )
 
 fun DUser.toDBModel(): UserDB = UserDB(
-    name, email
+    name
 )

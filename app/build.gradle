@@ -73,7 +73,7 @@ dependencies {
 
     // Room
     implementation Room.runtime
-    //implementation Room.rxjava2
+    implementation Room.rxjava
     kapt Room.compiler
 
     // OkHttp and Retrofit

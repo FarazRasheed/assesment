@@ -169,5 +169,15 @@
         <item name="android:textSize">14sp</item>
     </style>
 
+    <style name="PrimaryButtonStyle">
+        <item name="android:textAppearance">@style/TextWhiteBoltStyle.Size14</item>
+        <item name="android:background">@drawable/round_corners</item>
+        <item name="android:backgroundTint">@color/colorPurple</item>
+        <item name="android:paddingLeft">10dp</item>
+        <item name="android:paddingRight">10dp</item>
+        <item name="android:textColor">@color/colorWhite</item>
+        <item name="android:minHeight">36dp</item>
+        <item name="android:minWidth">114dp</item>
+    </style>
 
 </resources>

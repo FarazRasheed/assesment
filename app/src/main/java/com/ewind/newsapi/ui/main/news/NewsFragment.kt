@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import au.com.elegantmedia.dod.util.ext.showToast
 import com.ewind.newsapi.R
@@ -26,12 +27,13 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 class NewsFragment : BaseFragment(), CategoryAdapter.AdapterListener {
 
     private val newsViewModel by viewModel<NewsViewModel>()
-    private val categoryArray = mutableListOf("All", "bitcoin", "apple", "earthquake", "animal")
+    private lateinit var adapterPref: CategoryAdapter
     private lateinit var newsAdapter: NewsAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        newsViewModel.newsliveDate.observe(this, androidx.lifecycle.Observer { updateView(it) })
+        newsViewModel.newsliveDate.observe(this, Observer { updateView(it) })
+        newsViewModel.livedataPre.observe(this, Observer { populate(it) })
     }
 
     override fun onCreateView(
@@ -46,16 +48,9 @@ class NewsFragment : BaseFragment(), CategoryAdapter.AdapterListener {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val categorys = categoryArray.mapIndexed { index, s ->
-            if (index == 0) {
-                Category(s, true)
-            } else {
-                Category(s)
-            }
-        }.toMutableList()
-        val adapter = CategoryAdapter(categorys)
-        adapter.listener = this
-        rv_category.adapter = adapter
+        adapterPref = CategoryAdapter(mutableListOf())
+        adapterPref.listener = this
+        rv_category.adapter = adapterPref
 
         newsAdapter = NewsAdapter(mutableListOf())
         rv_top_news.adapter = newsAdapter
@@ -86,6 +81,7 @@ class NewsFragment : BaseFragment(), CategoryAdapter.AdapterListener {
         }
 
         getNews()
+        newsViewModel.preferenceAll()
     }
 
     private fun getNews() {
@@ -124,9 +120,26 @@ class NewsFragment : BaseFragment(), CategoryAdapter.AdapterListener {
         }
     }
 
+    private fun populate(resource: Resource<List<Category>>?) {
+        resource?.let {
+            when (it.state) {
+                ResourceState.LOADING -> {
+                }
+                ResourceState.SUCCESS -> {
+                    pull_refresh.stopRefresh()
+                    it.data?.toMutableList()?.let { it1 -> adapterPref.addCategory(it1) }
+                }
+                ResourceState.ERROR -> {
+                }
+            }
+        }
+    }
+
     override fun onCategorySelected(category: Category) {
         refreshData()
-        newsViewModel.keyword = category.key
+        category.key?.let {
+            newsViewModel.keyword = category.key
+        }
         getNews()
     }
 }

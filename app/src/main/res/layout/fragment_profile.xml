@@ -20,43 +20,31 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="32dp"
-                android:layout_marginTop="32dp"
+                android:layout_marginTop="50dp"
                 android:layout_marginEnd="32dp"
                 android:textAlignment="center"
-                app:layout_constraintBottom_toTopOf="@+id/tv_user_email"
+                app:layout_constraintBottom_toTopOf="@+id/btn_edit_profile"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.13"
+                app:layout_constraintVertical_bias="0.22000003"
                 app:layout_constraintVertical_chainStyle="packed"
                 tools:text="@tools:sample/full_names" />
 
-            <TextView
-                android:id="@+id/tv_user_email"
-                style="@style/TextGraphiteBoltStyle.Size14"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="24dp"
-                android:textAlignment="center"
-                app:layout_constraintBottom_toTopOf="@+id/btn_edit_profile"
-                app:layout_constraintEnd_toEndOf="@+id/tv_user_name"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toStartOf="@+id/tv_user_name"
-                app:layout_constraintTop_toBottomOf="@+id/tv_user_name"
-                tools:text="@tools:sample/lorem" />
-
             <Button
                 android:id="@+id/btn_edit_profile"
+                style="@style/PrimaryButtonStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="24dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginBottom="32dp"
                 android:text="Edit Profile"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tv_user_email" />
+                app:layout_constraintTop_toBottomOf="@+id/tv_user_name" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

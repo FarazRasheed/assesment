@@ -2,8 +2,10 @@ package com.ewind.newsapi.ui.main.news
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.ewind.newsapi.domain.model.Category
 import com.ewind.newsapi.domain.model.DArticles
 import com.ewind.newsapi.domain.usecase.NewsUseCase
+import com.ewind.newsapi.domain.usecase.PreferenceUseCase
 import com.ewind.newsapi.util.Constant
 import com.ewind.newsapi.util.Resource
 import com.ewind.newsapi.util.TempVar
@@ -14,10 +16,15 @@ import com.ewind.newsapi.util.network.ErrorHandler
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
 
-class NewsViewModel(val newsUseCase: NewsUseCase) : ViewModel() {
+class NewsViewModel(
+    private val newsUseCase: NewsUseCase,
+    private val preferenceUseCase: PreferenceUseCase
+) :
+    ViewModel() {
 
     private val compositeDisposable = CompositeDisposable()
     val newsliveDate = MutableLiveData<Resource<MutableList<DArticles>>>()
+    val livedataPre = MutableLiveData<Resource<List<Category>>>()
     var isLoading = false
     var currentPage: Int = 1
     var totalCount: Int? = null
@@ -45,6 +52,21 @@ class NewsViewModel(val newsUseCase: NewsUseCase) : ViewModel() {
                     },
                     {
                         newsliveDate.setError(ErrorHandler.getApiErrorMessage(it))
+                    })
+        )
+    }
+
+    fun preferenceAll() {
+        compositeDisposable.add(
+            preferenceUseCase
+                .getPreferenceAll()
+                .subscribeOn(Schedulers.io())
+                .subscribe(
+                    {
+                        livedataPre.setSuccess(it, null)
+                    },
+                    {
+
                     })
         )
     }
