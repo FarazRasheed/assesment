@@ -6,16 +6,16 @@
 
     <fragment
         android:id="@+id/navigation_top_news"
-        android:name="com.ewind.boilerplate.ui.main.topnews.TopNewsFragment"
+        android:name="com.ewind.newsapi.ui.main.topnews.TopNewsFragment"
         android:label="@string/title_top_news" />
 
     <fragment
         android:id="@+id/navigation_news"
-        android:name="com.ewind.boilerplate.ui.main.news.NewsFragment"
+        android:name="com.ewind.newsapi.ui.main.news.NewsFragment"
         android:label="@string/title_news" />
 
     <fragment
         android:id="@+id/navigation_profile"
-        android:name="com.ewind.boilerplate.ui.main.profile.ProfileFragment"
+        android:name="com.ewind.newsapi.ui.main.profile.ProfileFragment"
         android:label="@string/title_profile" />
 </navigation>

@@ -1,5 +1,5 @@
 object ApplicationId {
-    const val id = "com.ewind.boilerplate"
+    const val id = "com.ewind.newsapi"
 }
 
 object Modules {
