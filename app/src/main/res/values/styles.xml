@@ -17,12 +17,21 @@
 
     <style name="TextBlackBoltStyle">
         <item name="android:textColor">@color/colorBlack</item>
-        <item name="android:textStyle">bold</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:fontFamily" tools:targetApi="jelly_bean">@font/montserrat_semibold
+        </item>
     </style>
 
     <style name="TextBlackNormalStyle">
         <item name="android:textColor">@color/colorBlack</item>
         <item name="android:textStyle">normal</item>
+        <item name="android:fontFamily" tools:targetApi="jelly_bean">@font/montserrat_medium</item>
+    </style>
+
+    <style name="TextBlackThickStyle">
+        <item name="android:textColor">@color/colorBlack</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:fontFamily" tools:targetApi="jelly_bean">@font/montserrat_regular</item>
     </style>
 
     <style name="TextBlackBoltStyle.Size16">
@@ -34,6 +43,10 @@
     </style>
 
     <style name="TextBlackNormalStyle.Size16">
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="TextBlackThickStyle.Size16">
         <item name="android:textSize">16sp</item>
     </style>
 

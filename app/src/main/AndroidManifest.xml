@@ -7,7 +7,7 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
-        android:name="com.ewind.newsapi.AssApplication"
+        android:name=".AssApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -21,15 +21,19 @@
             android:name="org.apache.http.legacy"
             android:required="false" />
 
-        <activity
-            android:name="com.ewind.newsapi.ui.main.home.HomeActivity"
-            android:label="@string/title_activity_home">
+        <activity android:name=".ui.main.home.HomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".ui.main.newsview.NewsViewActivity"
+            android:label="News"
+            android:launchMode="singleTop"
+            android:parentActivityName=".ui.main.home.HomeActivity" />
 
     </application>
 

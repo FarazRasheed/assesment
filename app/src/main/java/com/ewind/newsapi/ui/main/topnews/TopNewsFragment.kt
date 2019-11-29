@@ -11,17 +11,20 @@ import com.ewind.newsapi.R
 import com.ewind.newsapi.domain.model.DArticles
 import com.ewind.newsapi.ui.component.adapter.NewsAdapter
 import com.ewind.newsapi.ui.main.base.BaseFragment
+import com.ewind.newsapi.ui.main.newsview.EXTRA_NEWS
+import com.ewind.newsapi.ui.main.newsview.NewsViewActivity
 import com.ewind.newsapi.util.Msg
 import com.ewind.newsapi.util.PaginationScrollListener
 import com.ewind.newsapi.util.Resource
 import com.ewind.newsapi.util.ResourceState
+import com.ewind.newsapi.util.ext.startActivity
 import com.ewind.newsapi.util.ext.startRefresh
 import com.ewind.newsapi.util.ext.stopRefresh
 import com.ewind.newsapi.util.ext.withNetwork
 import kotlinx.android.synthetic.main.fragment_top_news.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
-class TopNewsFragment : BaseFragment() {
+class TopNewsFragment : BaseFragment(), NewsAdapter.AdapterListener {
 
     private val topNewsViewModel by viewModel<TopNewsViewModel>()
     private lateinit var newsAdapter: NewsAdapter
@@ -44,6 +47,7 @@ class TopNewsFragment : BaseFragment() {
         super.onViewCreated(view, savedInstanceState)
 
         newsAdapter = NewsAdapter(mutableListOf())
+        newsAdapter.listener = this
         rv_top_news.adapter = newsAdapter
         rv_top_news.addOnScrollListener(object :
             PaginationScrollListener(rv_top_news.layoutManager as LinearLayoutManager) {
@@ -107,6 +111,12 @@ class TopNewsFragment : BaseFragment() {
                     Toast.makeText(context, it.message.toString(), Toast.LENGTH_LONG).show()
                 }
             }
+        }
+    }
+
+    override fun onNewsSelected(news: DArticles) {
+        context?.startActivity<NewsViewActivity> {
+            putExtra(EXTRA_NEWS, news)
         }
     }
 }

@@ -38,6 +38,6 @@ class HomeActivity : BaseActivity() {
         val list = Constant.PRE_ARRAY.map {
             PreferencesDB(it)
         }
-        databaseClient.appDatabases().preferenceDao().insertAll(list)
+        //databaseClient.appDatabases().preferenceDao().insertAll(list)
     }
 }

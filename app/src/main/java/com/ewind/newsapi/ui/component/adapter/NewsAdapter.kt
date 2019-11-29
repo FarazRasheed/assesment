@@ -51,6 +51,6 @@ class NewsAdapter(val newsList: MutableList<DArticles>) :
     }
 
     interface AdapterListener {
-        fun onNewsSelected(work: DArticles)
+        fun onNewsSelected(news: DArticles)
     }
 }
