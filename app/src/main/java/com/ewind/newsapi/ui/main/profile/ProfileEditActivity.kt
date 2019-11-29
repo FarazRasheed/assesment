@@ -25,6 +25,13 @@ class ProfileEditActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_profile_edit)
+
+        supportActionBar?.apply {
+            this.setDisplayHomeAsUpEnabled(true)
+            this.setDisplayShowHomeEnabled(true)
+            this.setHomeAsUpIndicator(R.drawable.ic_back)
+        }
+
         profileViewModel.userLiveData.observe(this, Observer { setData(it) })
         profileViewModel.updateLiveData.observe(this, Observer { handleUi(it) })
         profileViewModel.getUser()
@@ -68,17 +75,13 @@ class ProfileEditActivity : BaseActivity() {
                 }
                 ResourceState.SUCCESS -> {
                     it.data?.showToast(this)
-                    onBackPressed()
+                    setResult(Activity.RESULT_OK)
+                    finish()
                 }
                 ResourceState.ERROR -> {
                     it.message.toString().showToast(this)
                 }
             }
         }
-    }
-
-    override fun onBackPressed() {
-        super.onBackPressed()
-        setResult(Activity.RESULT_OK)
     }
 }

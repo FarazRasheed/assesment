@@ -32,14 +32,12 @@
         <activity
             android:name=".ui.main.newsview.NewsViewActivity"
             android:label="News"
-            android:launchMode="singleTop"
-            android:parentActivityName=".ui.main.home.HomeActivity" />
+            android:launchMode="singleTop" />
 
         <activity
             android:name=".ui.main.profile.ProfileEditActivity"
             android:label="Edit Profile"
-            android:launchMode="singleTop"
-            android:parentActivityName=".ui.main.home.HomeActivity" />
+            android:launchMode="singleTop" />
 
     </application>
 

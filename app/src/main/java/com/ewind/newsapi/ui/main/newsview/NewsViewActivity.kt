@@ -21,6 +21,12 @@ class NewsViewActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_news_view)
 
+        supportActionBar?.apply {
+            this.setDisplayHomeAsUpEnabled(true)
+            this.setDisplayShowHomeEnabled(true)
+            this.setHomeAsUpIndicator(R.drawable.ic_back)
+        }
+
         val news = intent?.extras?.getParcelable<DArticles>(EXTRA_NEWS)
         news?.let {
             setData(it)
