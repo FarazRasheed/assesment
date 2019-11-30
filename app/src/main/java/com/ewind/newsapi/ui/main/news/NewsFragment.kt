@@ -127,7 +127,12 @@ class NewsFragment : BaseFragment(), CategoryAdapter.AdapterListener, NewsAdapte
                 }
                 ResourceState.SUCCESS -> {
                     pull_refresh.stopRefresh()
-                    it.data?.toMutableList()?.let { it1 -> adapterPref.addCategory(it1) }
+                    it.data?.toMutableList()?.let { it1 ->
+                        if (it1.isNotEmpty()) {
+                            it1[0].selected = true
+                        }
+                        adapterPref.addCategory(it1)
+                    }
                 }
                 ResourceState.ERROR -> {
                 }
