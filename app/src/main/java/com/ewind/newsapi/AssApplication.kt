@@ -5,7 +5,6 @@ import android.content.Context
 import androidx.multidex.MultiDex
 import com.ewind.newsapi.ki.dataBaseModule
 import com.ewind.newsapi.ki.networkModule
-import com.facebook.stetho.Stetho
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin
 
@@ -18,8 +17,6 @@ open class AssApplication : Application() {
     override fun onCreate() {
         super.onCreate()
 
-        // Initialize Stetho
-        Stetho.initializeWithDefaults(this)
         startKoin {
             androidContext(this@AssApplication)
             modules(listOf(networkModule, dataBaseModule))

@@ -7,7 +7,6 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
-import au.com.elegantmedia.dod.util.ext.showToast
 import com.ewind.newsapi.R
 import com.ewind.newsapi.domain.model.Category
 import com.ewind.newsapi.domain.model.DArticles
@@ -20,10 +19,7 @@ import com.ewind.newsapi.util.Msg
 import com.ewind.newsapi.util.PaginationScrollListener
 import com.ewind.newsapi.util.Resource
 import com.ewind.newsapi.util.ResourceState
-import com.ewind.newsapi.util.ext.startActivity
-import com.ewind.newsapi.util.ext.startRefresh
-import com.ewind.newsapi.util.ext.stopRefresh
-import com.ewind.newsapi.util.ext.withNetwork
+import com.ewind.newsapi.util.ext.*
 import kotlinx.android.synthetic.main.fragment_news.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
 

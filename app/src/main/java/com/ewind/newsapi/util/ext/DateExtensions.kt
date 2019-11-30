@@ -30,12 +30,6 @@ fun String.toDate(format: String): Date? {
     }
 }
 
-fun Long.toDate(): Date {
-    val date = Date()
-    date.time = this
-    return date
-}
-
 fun Date.toCustomDate(format: String): String {
     val simpleDateFormat = SimpleDateFormat(format, Locale.US)
     return simpleDateFormat.format(this)
@@ -47,16 +41,6 @@ fun String.toCustomDate(format: String): String {
     } ?: ""
 }
 
-fun Calendar.calculateDays(calendarSec: Calendar): Long {
-    val diff = this.timeInMillis - calendarSec.timeInMillis
-    return TimeUnit.MILLISECONDS.toDays(diff)
-}
-
-fun String.toCustomDateWithPos(): String {
-    val suffix = getDayOfMonthSuffix(this.toCustomDate(DD).toInt())
-    val customDate = this.toCustomDate(DD_MMMM_EEEE)
-    return String.format(customDate, suffix)
-}
 
 fun getDayOfMonthSuffix(n: Int): String {
     //checkArgument(n >= 1 && n <= 31, "illegal day of month: $n")
@@ -79,34 +63,6 @@ fun Long.differentFromCurrent(): Long {
     return dif
 }
 
-/**
- * get date title
- */
-fun Long.getDate(): String {
-    val calendat = Calendar.getInstance()
-    calendat.timeInMillis = this
-    val today = Calendar.getInstance().apply {
-        set(Calendar.HOUR_OF_DAY, 0)
-        set(Calendar.MINUTE, 0)
-        set(Calendar.SECOND, 0)
-    }
-    val yetdyCalendar = Calendar.getInstance().apply {
-        set(Calendar.HOUR_OF_DAY, 0)
-        set(Calendar.MINUTE, 0)
-        set(Calendar.SECOND, 0)
-        add(Calendar.DATE, -1)
-    }
-
-    return if (calendat.after(today)) {
-        "Today"
-    } else if (calendat.after(yetdyCalendar)) {
-        "Yesterday"
-    } else {
-        val date = Date()
-        date.time = this
-        date.toCustomDate(DD_MMM_YYYY)
-    }
-}
 
 /**
  * get time title
@@ -133,41 +89,4 @@ fun Long.getTime(): String {
             }
         }
     }
-}
-
-fun Long.milisToHours(): String {
-    var secound = this.div(1000)
-    var minite = 0
-    var hours = 0
-
-    if (secound >= 60) {
-        minite = secound.div(60).toInt()
-        secound %= 60
-    }
-    if (minite >= 60) {
-        hours = minite.div(60).toInt()
-        minite %= 60
-    }
-
-    return "${String.format("%02d", hours)}:${String.format("%02d", minite)}:${String.format(
-        "%02d",
-        secound
-    )}"
-}
-
-fun Long.milisToMinute(): String {
-    var secound = this.div(1000)
-    var minite = 0
-
-    if (secound >= 60) {
-        minite = secound.div(60).toInt()
-        secound %= 60
-    }
-    return "${String.format("%02d", minite)}:${String.format("%02d", secound)}"
-}
-
-fun Long.milisToSecound(): Long {
-    val secound = this.div(1000)
-
-    return secound
 }
