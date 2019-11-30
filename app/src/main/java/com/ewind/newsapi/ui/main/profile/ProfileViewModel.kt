@@ -28,7 +28,7 @@ class ProfileViewModel(val profileUserCase: ProfileUserCase) : ViewModel() {
                         userLiveData.setSuccess(response, null)
                     },
                     {
-                        //userLiveData.setError(Msg.INTERNAL_ISSUE)
+                        userLiveData.setError()
                     })
         )
     }

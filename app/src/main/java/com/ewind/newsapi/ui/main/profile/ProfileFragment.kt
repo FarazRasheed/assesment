@@ -6,7 +6,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.lifecycle.Observer
 import com.ewind.newsapi.R
 import com.ewind.newsapi.domain.model.DUser
@@ -58,7 +57,7 @@ class ProfileFragment : BaseFragment() {
                 }
                 ResourceState.ERROR -> {
                     pull_refresh.stopRefresh()
-                    Toast.makeText(context, it.message.toString(), Toast.LENGTH_LONG).show()
+                    //Toast.makeText(context, it.message.toString(), Toast.LENGTH_LONG).show()
                 }
             }
         }

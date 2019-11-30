@@ -60,15 +60,9 @@ dependencies {
     implementation 'androidx.lifecycle:lifecycle-extensions:2.1.0'
     implementation 'androidx.navigation:navigation-fragment-ktx:2.0.0'
     implementation 'androidx.navigation:navigation-ui-ktx:2.0.0'
-    testImplementation Testing.junit
-    testImplementation Testing.mock_core
-    androidTestImplementation Testing.test_runner
-    androidTestImplementation Testing.espresso_core
 
     // Multidex
     implementation Androidx.mulidex
-
-    implementation Googlelibraries.maps
 
     // Life cycle
     implementation Lifecycle.extensions
@@ -90,10 +84,6 @@ dependencies {
     // RxJava and RxAndroid
     implementation Reactivex.rxjava
     implementation Reactivex.rxkotlin
-
-    // Stetho for network debugging
-    implementation Stetho.runtime
-    implementation Stetho.okhttp
 
     implementation Koin.android
     implementation Koin.viewmodel
