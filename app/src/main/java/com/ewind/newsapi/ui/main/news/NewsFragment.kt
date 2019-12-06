@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.ewind.newsapi.util.ext.showToast
 import com.ewind.newsapi.R
 import com.ewind.newsapi.domain.model.Category
 import com.ewind.newsapi.domain.model.DArticles

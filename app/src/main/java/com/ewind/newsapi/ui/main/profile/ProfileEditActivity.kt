@@ -3,6 +3,7 @@ package com.ewind.newsapi.ui.main.profile
 import android.app.Activity
 import android.os.Bundle
 import androidx.lifecycle.Observer
+import com.ewind.newsapi.util.ext.showToast
 import com.ewind.newsapi.R
 import com.ewind.newsapi.domain.model.DUser
 import com.ewind.newsapi.ui.main.base.BaseActivity
@@ -10,7 +11,6 @@ import com.ewind.newsapi.util.Resource
 import com.ewind.newsapi.util.ResourceState
 import com.ewind.newsapi.util.ext.getStringTrim
 import com.ewind.newsapi.util.ext.hideKeyboard
-import com.ewind.newsapi.util.ext.showToast
 import com.ewind.newsapi.util.ext.validate
 import kotlinx.android.synthetic.main.activity_profile_edit.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
