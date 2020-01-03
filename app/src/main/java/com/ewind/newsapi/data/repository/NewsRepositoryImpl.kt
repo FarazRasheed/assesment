@@ -1,6 +1,6 @@
 package com.ewind.newsapi.data.repository
 
-import com.ewind.newsapi.data.remote.apis.NewsApi
+import com.ewind.newsapi.data.source.remote.apis.NewsApi
 import com.ewind.newsapi.domain.model.DResponse
 import com.ewind.newsapi.domain.model.toViewModel
 import com.ewind.newsapi.domain.repository.NewsRepository

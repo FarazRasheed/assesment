@@ -1,10 +1,10 @@
 package com.ewind.newsapi.domain.model
 
-import com.ewind.newsapi.data.local.model.PreferencesDB
-import com.ewind.newsapi.data.local.model.UserDB
-import com.ewind.newsapi.data.remote.model.Articles
-import com.ewind.newsapi.data.remote.model.Response
-import com.ewind.newsapi.data.remote.model.Source
+import com.ewind.newsapi.data.source.local.model.PreferencesDB
+import com.ewind.newsapi.data.source.local.model.UserDB
+import com.ewind.newsapi.data.source.remote.model.Articles
+import com.ewind.newsapi.data.source.remote.model.Response
+import com.ewind.newsapi.data.source.remote.model.Source
 
 fun Response.toViewModel(): DResponse = DResponse(
     totalResults, articles?.map { it.toViewModel() }

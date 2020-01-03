@@ -1,6 +1,6 @@
 package com.ewind.newsapi.data.repository
 
-import com.ewind.newsapi.data.local.database.DatabaseClient
+import com.ewind.newsapi.data.source.local.database.DatabaseClient
 import com.ewind.newsapi.domain.model.Category
 import com.ewind.newsapi.domain.model.toViewModel
 import com.ewind.newsapi.domain.repository.PreferenceRepository

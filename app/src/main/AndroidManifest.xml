@@ -21,7 +21,7 @@
             android:name="org.apache.http.legacy"
             android:required="false" />
 
-        <activity android:name=".ui.main.home.HomeActivity">
+        <activity android:name=".presentation.main.home.HomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -30,12 +30,12 @@
         </activity>
 
         <activity
-            android:name=".ui.main.newsview.NewsViewActivity"
+            android:name=".presentation.main.newsview.NewsViewActivity"
             android:label="News"
             android:launchMode="singleTop" />
 
         <activity
-            android:name=".ui.main.profile.ProfileEditActivity"
+            android:name=".presentation.main.profile.ProfileEditActivity"
             android:label="Edit Profile"
             android:launchMode="singleTop" />
 

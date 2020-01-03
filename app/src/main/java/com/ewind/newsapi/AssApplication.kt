@@ -3,8 +3,8 @@ package com.ewind.newsapi
 import android.app.Application
 import android.content.Context
 import androidx.multidex.MultiDex
-import com.ewind.newsapi.ki.dataBaseModule
-import com.ewind.newsapi.ki.networkModule
+import com.ewind.newsapi.di.dataBaseModule
+import com.ewind.newsapi.di.networkModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin
 
