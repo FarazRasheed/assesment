@@ -12,6 +12,8 @@ class NewsAdapter(val newsList: MutableList<DArticles>) :
     RecyclerView.Adapter<NewsAdapter.ViewHolder>() {
 
     var listener: AdapterListener? = null
+    val animate = Animate()
+    private var on_attach = true
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         return ViewHolder(parent.inflate(com.ewind.newsapi.R.layout.item_news, false))
@@ -20,7 +22,10 @@ class NewsAdapter(val newsList: MutableList<DArticles>) :
     override fun getItemCount(): Int = newsList.size
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) =
-        holder.run { onBind(position) }
+        holder.run {
+            onBind(position)
+            animate.setAnimation(on_attach, itemView, position)
+        }
 
     inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         fun onBind(position: Int) {
@@ -48,6 +53,17 @@ class NewsAdapter(val newsList: MutableList<DArticles>) :
     fun addNews(list: MutableList<DArticles>) {
         newsList.addAll(list)
         notifyDataSetChanged()
+    }
+
+    override fun onAttachedToRecyclerView(recyclerView: RecyclerView) {
+        super.onAttachedToRecyclerView(recyclerView)
+
+        recyclerView.addOnScrollListener(object : RecyclerView.OnScrollListener() {
+            override fun onScrollStateChanged(recyclerView: RecyclerView, newState: Int) {
+                super.onScrollStateChanged(recyclerView, newState)
+                on_attach = false
+            }
+        })
     }
 
     interface AdapterListener {
