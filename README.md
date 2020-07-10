@@ -7,7 +7,7 @@
 - Dependency injection: koin
 - Network: Retrofit, RxJava, okHttp
 
-#### This project with 3 layers:
+#### Structure of this project with 3 layers:
 - Presentation
 - Domain
 - Data

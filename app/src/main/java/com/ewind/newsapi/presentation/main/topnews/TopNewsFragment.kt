@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.ewind.newsapi.util.ext.showToast
 import com.ewind.newsapi.R
 import com.ewind.newsapi.domain.model.DArticles
 import com.ewind.newsapi.presentation.component.adapter.NewsAdapter
