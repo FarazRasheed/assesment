@@ -52,4 +52,20 @@ class ProfileViewModel(val profileUserCase: ProfileUserCase) : ViewModel() {
         super.onCleared()
     }
 
+    companion object {
+        @JvmField
+        val CITIES = arrayOf(
+            "London",
+            "Holborn",
+            "St Giles",
+            "Clerkenwell",
+            "Finsbury",
+            "St Pancras",
+            "Bloomsbury",
+            "Strand",
+            "Shoreditch",
+            "St Luke's"
+        )
+    }
+
 }

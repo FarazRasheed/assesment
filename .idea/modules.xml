@@ -2,10 +2,14 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Assessment.iml" filepath="$PROJECT_DIR$/Assessment.iml" group="Assessment" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Assessment_buildSrc.iml" filepath="$PROJECT_DIR$/.idea/modules/Assessment_buildSrc.iml" group="Assessment/Assessment_buildSrc" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" group="Assessment/app" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/news.iml" filepath="$PROJECT_DIR$/.idea/news.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Assessment.iml" filepath="$PROJECT_DIR$/.idea/modules/Assessment.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Assessment.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Assessment.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Assessment.app.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Assessment.app.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Assessment.app.main.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Assessment.app.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Assessment.app.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Assessment.app.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Assessment.buildSrc.iml" filepath="$PROJECT_DIR$/.idea/modules/Assessment.buildSrc.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Assessment.buildSrc.main.iml" filepath="$PROJECT_DIR$/.idea/modules/Assessment.buildSrc.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Assessment.buildSrc.test.iml" filepath="$PROJECT_DIR$/.idea/modules/Assessment.buildSrc.test.iml" />
     </modules>
   </component>
 </project>

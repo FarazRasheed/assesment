@@ -171,8 +171,10 @@ object Apiliveserver {
 }
 
 object Apisandboxserver {
-    const val url = "\"https://newsapi.org/v2/\""
-    const val apiKey = "\"55d61398b4ba44d7949d20923e0f0bc9\""
+//    const val url = "\"https://newsapi.org/v2/\""
+    const val url = "\"http://api.weatherapi.com/v1/\""
+    const val apiKey = "\"346fa87e7ac74727a1a72424222405\""
+//    const val apiKey = "\"55d61398b4ba44d7949d20923e0f0bc9\""
 }
 
 object Retrofit {
@@ -199,6 +201,7 @@ object Dagger {
 object Glide {
     const val runtime = "com.github.bumptech.glide:glide:${Versions.glide}"
     const val compiler = "com.github.bumptech.glide:compiler:${Versions.glide}"
+    const val sdp = "com.intuit.sdp:sdp-android:1.1.0"
 }
 
 object Reactivex {

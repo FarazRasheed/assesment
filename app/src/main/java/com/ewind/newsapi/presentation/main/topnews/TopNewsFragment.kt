@@ -1,10 +1,12 @@
 package com.ewind.newsapi.presentation.main.topnews
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.ewind.newsapi.util.ext.showToast
 import com.ewind.newsapi.R
@@ -25,6 +27,8 @@ class TopNewsFragment : BaseFragment(), NewsAdapter.AdapterListener {
 
     private val topNewsViewModel by viewModel<TopNewsViewModel>()
     private lateinit var newsAdapter: NewsAdapter
+    private val args: TopNewsFragmentArgs by navArgs<TopNewsFragmentArgs>()
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -37,6 +41,7 @@ class TopNewsFragment : BaseFragment(), NewsAdapter.AdapterListener {
         savedInstanceState: Bundle?
     ): View? {
         val root = inflater.inflate(R.layout.fragment_top_news, container, false)
+        Log.e("TopNewsFragment...>", ".....>"+args.city)
         return root
     }
 
@@ -112,6 +117,7 @@ class TopNewsFragment : BaseFragment(), NewsAdapter.AdapterListener {
     }
 
     override fun onNewsSelected(news: DArticles) {
+
         context?.startActivity<NewsViewActivity> {
             putExtra(EXTRA_NEWS, news)
         }
