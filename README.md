@@ -26,14 +26,3 @@
 4. **util**: Utility classes.
 5. **doamin**: Contains Use Cases, and Model Objects. Business logic happens here.
 
-### Library reference resources:
-1. RxJava2: https://github.com/ReactiveX/RxJava
-2. koin: https://insert-koin.io/
-3. Glide: https://github.com/bumptech/glide
-4. Retrofit: https://square.github.io/retrofit/
-5. Room: https://developer.android.com/jetpack/androidx/releases/room
-6: okhttp: https://square.github.io/okhttp/
-
-### API 
-- newsapi : https://newsapi.org/docs
-
