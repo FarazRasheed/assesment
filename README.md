@@ -1,4 +1,4 @@
-# News app
+# Weather app
 
 ### Major technologies
 - Language: Kotlin
