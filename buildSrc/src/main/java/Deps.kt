@@ -1,5 +1,5 @@
 object ApplicationId {
-    const val id = "com.ewind.newsapi"
+    const val id = "com.faraz.weatherapp"
 }
 
 object Modules {
@@ -174,6 +174,9 @@ object Apisandboxserver {
 //    const val url = "\"https://newsapi.org/v2/\""
     const val url = "\"http://api.weatherapi.com/v1/\""
     const val apiKey = "\"346fa87e7ac74727a1a72424222405\""
+    const val days = "\"15\""
+    const val aqi = "\"no\""
+    const val alerts = "\"no\""
 //    const val apiKey = "\"55d61398b4ba44d7949d20923e0f0bc9\""
 }
 

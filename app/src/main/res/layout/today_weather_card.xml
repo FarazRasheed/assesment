@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/coloGray"
+    android:orientation="vertical"
+    app:cardCornerRadius="@dimen/_18sdp"
+    app:cardElevation="@dimen/_10sdp"
+    app:cardMaxElevation="12dp"
+    app:cardPreventCornerOverlap="true"
+    app:cardUseCompatPadding="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/coloGray"
+        android:padding="@dimen/_14sdp">
+
+        <TextView
+            android:id="@+id/tvCity"
+            style="@style/TextGreenBoltStyle.Size16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="London"
+            android:gravity="center"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <TextView
+            android:id="@+id/tvTodayDate"
+            style="@style/TextGraphiteBoltStyle.Size12"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="@+id/tvCity"
+            app:layout_constraintTop_toBottomOf="@+id/tvCity"
+            app:layout_constraintEnd_toEndOf="@+id/tvCity"
+            android:gravity="center"
+            tools:text="May, 28" />
+        <ImageView
+            android:id="@+id/ivTodayCondition"
+            android:layout_width="@dimen/_100sdp"
+            android:layout_height="@dimen/_100sdp"
+            android:scaleType="centerCrop"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvTodayDate"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="@dimen/_15sdp"
+            tools:srcCompat="@tools:sample/avatars" />
+
+        <TextView
+            android:id="@+id/tvTempLabel"
+            style="@style/TextGraphiteBoltStyle.Size12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_20sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ivTodayCondition"
+            android:text="@string/temp" />
+
+        <TextView
+            android:id="@+id/tvTodayTemprature"
+            style="@style/TextBlackBoltStyle.Size14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="@+id/tvTempLabel"
+            app:layout_constraintEnd_toEndOf="@+id/tvTempLabel"
+            app:layout_constraintTop_toBottomOf="@+id/tvTempLabel"
+            tools:text="20C" />
+
+        <TextView
+            android:id="@+id/tvWindLabel"
+            style="@style/TextGraphiteBoltStyle.Size12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_20sdp"
+            app:layout_constraintStart_toEndOf="@+id/tvTempLabel"
+            app:layout_constraintEnd_toStartOf="@+id/tvHumiLabel"
+            app:layout_constraintTop_toBottomOf="@+id/ivTodayCondition"
+            android:text="@string/wind" />
+
+        <TextView
+            android:id="@+id/tvWind"
+            style="@style/TextBlackBoltStyle.Size14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="@+id/tvWindLabel"
+            app:layout_constraintEnd_toEndOf="@+id/tvWindLabel"
+            app:layout_constraintTop_toBottomOf="@+id/tvWindLabel"
+            tools:text="20km/h" />
+        <TextView
+            android:id="@+id/tvHumiLabel"
+            style="@style/TextGraphiteBoltStyle.Size12"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_20sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ivTodayCondition"
+            android:text="@string/humidity" />
+
+        <TextView
+            android:id="@+id/tvHumi"
+            style="@style/TextBlackBoltStyle.Size14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="@+id/tvHumiLabel"
+            app:layout_constraintEnd_toEndOf="@+id/tvHumiLabel"
+            app:layout_constraintTop_toBottomOf="@+id/tvHumiLabel"
+            tools:text="20%" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.cardview.widget.CardView>

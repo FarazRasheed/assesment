@@ -33,6 +33,9 @@ android {
             minifyEnabled false
             buildConfigField "String", "API_URL", "${Apisandboxserver.url}"
             buildConfigField "String", "API_KEY", "${Apisandboxserver.apiKey}"
+            buildConfigField "String", "DAYS", "${Apisandboxserver.days}"
+            buildConfigField "String", "AQI", "${Apisandboxserver.aqi}"
+            buildConfigField "String", "ALERTS", "${Apisandboxserver.alerts}"
 
         }
     }

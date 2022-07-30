@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.ewind.newsapi">
+    package="com.faraz.weatherapp">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
-        android:name=".AssApplication"
+        android:name="com.faraz.weatherapp.AssApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -21,24 +21,13 @@
             android:name="org.apache.http.legacy"
             android:required="false" />
 
-        <activity android:name=".presentation.main.home.HomeActivity">
+        <activity android:name="com.faraz.weatherapp.presentation.main.home.HomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity
-            android:name=".presentation.main.newsview.NewsViewActivity"
-            android:label="News"
-            android:launchMode="singleTop" />
-
-        <activity
-            android:name=".presentation.main.profile.ProfileEditActivity"
-            android:label="Edit Profile"
-            android:launchMode="singleTop" />
-
     </application>
 
 </manifest>

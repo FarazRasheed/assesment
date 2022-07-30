@@ -11,7 +11,14 @@
         <entry key="app/src/main/res/drawable/squre_corner.xml" value="0.278" />
         <entry key="app/src/main/res/drawable/squre_corner_black.xml" value="0.278" />
         <entry key="app/src/main/res/layout/activity_home.xml" value="0.4026268115942029" />
+        <entry key="app/src/main/res/layout/fragment_forecast.xml" value="0.4682971014492754" />
         <entry key="app/src/main/res/layout/fragment_profile.xml" value="0.2322695035460993" />
+        <entry key="app/src/main/res/layout/fragment_top_news.xml" value="0.31145833333333334" />
+        <entry key="app/src/main/res/layout/item_category.xml" value="0.3671875" />
+        <entry key="app/src/main/res/layout/item_news.xml" value="0.3958333333333333" />
+        <entry key="app/src/main/res/layout/item_weather.xml" value="0.375" />
+        <entry key="app/src/main/res/layout/no_data_layout.xml" value="0.340625" />
+        <entry key="app/src/main/res/layout/today_weather_card.xml" value="0.3671875" />
         <entry key="app/src/main/res/menu/bottom_nav_menu.xml" value="0.49270833333333336" />
       </map>
     </option>

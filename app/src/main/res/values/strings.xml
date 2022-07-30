@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">News API</string>
+    <string name="app_name">Weather App</string>
     <string name="title_activity_home">HomeActivity</string>
     <string name="title_top_news">Top News</string>
     <string name="title_news">News</string>
@@ -7,4 +7,12 @@
     <string name="enter_your_city">Enter Your City</string>
     <string name="search_city">Search City</string>
     <string name="continue_text">Continue</string>
+    <string name="hello">Hello!</string>
+    <string name="amelia_barlow">Amelia Barlow</string>
+    <string name="today_s_forecast_report">Today\'s Forecast report</string>
+    <string name="humidity">Humidity</string>
+    <string name="wind">Wind</string>
+    <string name="temp">Temp</string>
+    <string name="next_forecast">Next Forecast</string>
+    <string name="no_matching_location_found_try_to_change_location">No matching location found. Try to change location</string>
 </resources>
